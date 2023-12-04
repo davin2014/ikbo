@@ -1,0 +1,80 @@
+<app-sales-form (formSubmit)="onSubmit($event)"></app-sales-form>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        
+        @if(columns['customer']) {
+            <th scope="col">Cliente</th>
+        }
+        @if(columns['country']) {
+            <th scope="col">País</th>
+        }
+        @if(columns['provider']) {
+            <th scope="col">Proveedor</th>
+        }
+        @if(columns['category']) {
+            <th scope="col">Categoría</th>
+        }
+        @if(columns['variety']) {
+            <th scope="col">Variedad</th>
+        }
+        @if(columns['color']) {
+            <th scope="col">Color</th>
+        }
+        @for (item of dates; track $index) {
+            <th scope="col">{{ item }}</th>
+        }
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        @if (sales$ | async; as sales) {
+            @for  (item of sales; track $index) {
+                <tr>
+                    <td>{{ $index +1 }}</td>
+                    @if (columns['customer']) {
+                        <td>{{ item.customer }}</td>
+                    }
+                    @if (columns['country']) {
+                        <td>{{ item.country }}</td>
+                    }
+                    @if (columns['provider']) {
+                        <td>{{ item.provider }}</td>
+                    }
+                    @if (columns['category']) {
+                        <td>{{ item.category }}</td>
+                    }
+                    @if (columns['variety']) {
+                        <td>{{ item.variety }}</td>
+                    }
+                    @if (columns['color']) {
+                        <td>{{ item.color }}</td>
+                    }
+                    @for (itemD of dates; track $index) {
+                        
+                        
+                        <td>{{ item[itemD] }}</td>
+                    }
+                    <td>{{ item['totalT'] }}</td>
+                </tr>
+            }@empty {
+                <tr>
+                    <td [colSpan]="nuColumns">No hay información</td>
+                </tr>
+            }
+           }
+
+           <tr>
+            <td [colSpan]="nuColumns">Total</td>
+            @for (itemD of dates; track $index) {
+                <td></td>
+            }
+            <td></td>
+        </tr>
+      
+    </tbody>
+  </table>

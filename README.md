@@ -2,15 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
-## Development server
+## Tecnologías utilizadas
+
+- Angular CLI: 17.0.5
+- Node: 20.10.0
+- Package Manager: npm 10.2.3
+- OS: win32 x64
+- Angular: 17.0.5
+- ... animations, cli, common, compiler, compiler-cli, core, forms
+- ... platform-browser, platform-browser-dynamic, platform-server
+- ... router, ssr
+- rxjs: 7.8.1
+- typescript: 5.2.2
+- zone.js: 0.14.2
+
+## Servidor de desarrollo
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Generación de código
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Construcción
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
